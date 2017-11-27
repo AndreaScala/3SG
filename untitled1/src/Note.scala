@@ -37,10 +37,16 @@ class Note (var pitch: Int, var time: Float) {
   def findNoteType(bpm: Int): String = {
     this.time.toInt.toFloat/(60000/bpm).toFloat match {
       case 4f => "Semibreve"
+      case 3f => "Minima Puntata"
       case 2f => "Minima"
+      case 1.5f => "Semiminima Puntata"
       case 1f => "Semiminima"
+      case 0.75f => "Croma Puntata"
       case 0.5f => "Croma"
+      case 0.375 => "Semicroma Puntata"
       case 0.25f => "Semicroma"
+      case 0.1875f => "Biscroma Puntata"
+      case 0.125f => "Biscroma"
       case _ => "Nunno sacciu"
     }
   }
