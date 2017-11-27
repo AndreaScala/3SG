@@ -30,6 +30,17 @@ class Score (var sheetPath: String){
 
   //def getCentralOctave: Note {}
 
+  def convertPitchToNameNote(pitch: Int) = (pitch%12)match {
+    case 0 => "DO"
+    case 2 => "RE"
+    case 4 => "MI"
+    case 5 => "FA"
+    case 7 => "SOL"
+    case 9 => "LA"
+    case 11 => "SI"
+    case _ => convertPitchToNameNote(pitch-1)+"#";
+  }
+
 
 
 }
