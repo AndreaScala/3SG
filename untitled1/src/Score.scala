@@ -25,4 +25,14 @@ class Score (var sheetPath: String){
   bufferedSource.close;
 
   //END CONSTRUCTOR
+
+
+  def getCentralOctave(): Int = {
+    var average = 0
+    for (note <- noteList) {
+      average+=note.getOctave()
+    }
+    average = average/noteList.length
+    return average
+  }
 }

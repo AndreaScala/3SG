@@ -4,7 +4,10 @@ object  Main extends App {
   val myBpm = scala.io.StdIn.readInt()
   //Interpretazione e stampa Note
   for (note: Note <- score.noteList){
-    println(note.findNoteType(myBpm) + ": " + note.getNoteName() + note.getOctave())
+    println(note.getNoteValue(myBpm) + ": " + note.getNoteName() + note.getOctave())
   }
+
+  println("L'ottava centrale è la "+score.getCentralOctave())
+
 
 }

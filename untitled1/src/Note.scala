@@ -36,7 +36,7 @@ class Note (var pitch: Int, var time: Float) {
   //Funzione di Pattern Matching per identificare il tipo della nota (Figura)
   //Alcune duration corrispondono numericamente a una delle misure fondamentali (semibreve, minima, semiminima, ...).
   //Altrimenti corrispondono a misure puntate (semibreve puntata, minima puntata, ...)
-  def findNoteType(bpm: Float): String = {
+  def getNoteValue(bpm: Float): String = {
     this.time.toInt.toFloat/(60000/bpm) match { // <- calcola la duration
       case 4f => "Semibreve"
       case 2f => "Minima"
@@ -44,12 +44,12 @@ class Note (var pitch: Int, var time: Float) {
       case 0.5f => "Croma"
       case 0.25f => "Semicroma"
       case 0.125f => "Biscroma"
-      case _ => findNoteType(bpm*2f/3f) + " Puntata"
+      case _ => getNoteValue(bpm*2f/3f) + " Puntata"
     }
   }
 
-  def findNoteType(bpm: Int): String = {
-    findNoteType(bpm.toFloat); //overloading del metodo per ragioni di ricorsione
+  def getNoteValue(bpm: Int): String = {
+    getNoteValue(bpm.toFloat); //overloading del metodo per ragioni di ricorsione
   }
 
 }
