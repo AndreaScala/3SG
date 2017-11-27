@@ -25,7 +25,8 @@ class Note (var pitch: Int, var time: Float) {
   }
 
   //Funzione di Pattern Matching per individuare l'ottava della nota
-  //L'ottava di riferimento è calcolata facendo il rapporto tra il pitch e 12 (l'insieme dei semitoni dentro l'ottava) e sottraendo 1 per ragioni di convenzione
+  //L'ottava di riferimento è calcolata facendo il rapporto tra il pitch e 12 (l'insieme dei semitoni dentro l'ottava) e
+  //sottraendo 1 per ragioni di convenzione
   def getOctave(): Int = {
     this.pitch/12 match {
       case x => x-1
@@ -33,22 +34,22 @@ class Note (var pitch: Int, var time: Float) {
   }
 
   //Funzione di Pattern Matching per identificare il tipo della nota (Figura)
-  //NB.: Va approfondita
-  def findNoteType(bpm: Int): String = {
-    this.time.toInt.toFloat/(60000/bpm).toFloat match {
+  //Alcune duration corrispondono numericamente a una delle misure fondamentali (semibreve, minima, semiminima, ...).
+  //Altrimenti corrispondono a misure puntate (semibreve puntata, minima puntata, ...)
+  def findNoteType(bpm: Float): String = {
+    this.time.toInt.toFloat/(60000/bpm) match { // <- calcola la duration
       case 4f => "Semibreve"
-      case 3f => "Minima Puntata"
       case 2f => "Minima"
-      case 1.5f => "Semiminima Puntata"
       case 1f => "Semiminima"
-      case 0.75f => "Croma Puntata"
       case 0.5f => "Croma"
-      case 0.375 => "Semicroma Puntata"
       case 0.25f => "Semicroma"
-      case 0.1875f => "Biscroma Puntata"
       case 0.125f => "Biscroma"
-      case _ => "Nunno sacciu"
+      case _ => findNoteType(bpm*2f/3f) + " Puntata"
     }
+  }
+
+  def findNoteType(bpm: Int): String = {
+    findNoteType(bpm.toFloat); //overloading del metodo per ragioni di ricorsione
   }
 
 }
