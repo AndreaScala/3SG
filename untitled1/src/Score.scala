@@ -26,9 +26,9 @@ class Score (var sheetPath: String){
 
   //END CONSTRUCTOR
 
-  def countNote(note: Note): Int{}
+  //def countNote(note: Note): Int{}
 
-  def getCentralOctave: Note {}
+  //def getCentralOctave: Note {}
 
 
 
