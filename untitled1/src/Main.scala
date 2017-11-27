@@ -4,7 +4,7 @@ object  Main extends App {
   val myBpm = scala.io.StdIn.readInt()
   //Interpretazione e stampa Note
   for (note: Note <- score.noteList){
-    println(note.findNoteType(myBpm) + ": " + note.findNoteName() + note.findOctave())
+    println(note.findNoteType(myBpm) + ": " + note.getNoteName() + note.getOctave())
   }
 
 }
