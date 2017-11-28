@@ -1,5 +1,5 @@
 object  Main extends App {
-  val score = new Score("src\\sheet.txt")
+  val score = new Score("src\\sheet2.txt")
   println("Inserire BPM: ")
 
   val myBpm = scala.io.StdIn.readInt()
