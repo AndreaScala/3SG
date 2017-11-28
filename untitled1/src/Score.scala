@@ -52,21 +52,23 @@ class Score (var sheetPath: String){
       return average.toInt
   }
 
-  //funzione che utilizza il rilevamento delle alterazioni per riconoscere la tonalità
-  //per ogni alterazione rilevata si setta a true il valore corrispondente nella Map con chiavi le alterazioni
-  //quindi si controlla quale alterazione è stata rilevata dando "priorità secondo il circolo delle 5"
+  //funzione pseudoeuristica che utilizza il rilevamento delle alterazioni per riconoscere la tonalità
+  //per ogni alterazione rilevata si incrementa di 5 il valore corrispondente nella Map con chiavi le alterazioni,e si
+  //decrementano di 1 le restanti. In questo modo è probabile che le note alterate meno frequenti si annullano,
+  //infine si controlla quale alterazione è stata rilevata dando "priorità secondo il circolo delle 5"
   //es: è stato rilevato "FA#", allora solo lui è in chiave, di conseguenza la tonalità è sol maggiore
   //es: è stato rilvevato "SOL#", allora sono in chiave anche FA# e DO# e non serve controllare, la tonalità è LA M
   //es: nessuna alterazione rilevata: la tonalità è DO maggiore
   def getTonality(): String = {
-    val sharpsFound = Map ("FA#"-> false, "DO#" -> false,"SOL#"-> false,"RE#"-> false, "LA#"-> false)
+    val sharpsFound = Map ("FA#"-> 0, "DO#" -> 0,"SOL#"-> 0,"RE#"-> 0, "LA#"-> 0)
     for (note <- noteList) {
-     if (sharpsFound.contains(note.getNoteName())) sharpsFound(note.getNoteName())=true
+     if (sharpsFound.contains(note.getNoteName())) sharpsFound(note.getNoteName())+=5
+     for (key <- sharpsFound.keys if sharpsFound(key)!=0) sharpsFound(key)-= 1
     }
     val note = new Note(0,0)
     var sharpToCheck = "LA#"
     for (i <- 1 to sharpsFound.size) {
-      if (sharpsFound(sharpToCheck)==true) {
+      if (sharpsFound(sharpToCheck)>0) {
         return note.getNoteName(note.getRelativePitchByNoteName(sharpToCheck)+1)
       }
       else

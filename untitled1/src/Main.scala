@@ -1,8 +1,9 @@
 object  Main extends App {
-  val score = new Score("src\\sheet2.txt")
-  println("Inserire BPM: ")
+  println("Inserire nome file e BPM: ")
+  val command = scala.io.StdIn.readLine().split(' ')
+  val myBpm = command(1).toInt
+  val score = new Score("src\\" + command(0)+ ".txt")
 
-  val myBpm = scala.io.StdIn.readInt()
   score.print(myBpm)
 
   println("L'ottava centrale è la "+score.getCentralOctave())

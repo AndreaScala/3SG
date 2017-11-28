@@ -45,6 +45,7 @@ class Note (var pitch: Int, var time: Float) {
       case n if n >= 0.4f && n < 0.6f => "Croma"
       case n if n >= 0.24f && n < 0.26f => "Semicroma"
       case n if n >= 0.12f && n < 0.13f => "Biscroma"
+      case n if n >= 0.05f && n < 0.07f => "Semibiscroma"
       case _ => getNoteValue(bpm*2f/3f) + " Puntata"
     }
   }
