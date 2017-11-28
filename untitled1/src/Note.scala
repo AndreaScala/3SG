@@ -52,4 +52,12 @@ class Note (var pitch: Int, var time: Float) {
     getNoteValue(bpm.toFloat); //overloading del metodo per ragioni di ricorsione
   }
 
+  //Dato un nome di nota lo converte in un numero compreso tra 0 e 11, il valore del pitch relativo
+  def getRelativePitchByNoteName(noteName: String): Int ={
+    for (relativePitch <- 0 to 11) {
+      if (getNoteName(relativePitch.toInt) == noteName) return relativePitch.toInt
+    }
+    return -1 //mai raggiunto
+  }
+
 }

@@ -1,4 +1,5 @@
 import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.Map
 import scala.io.Source
 
 class Score (var sheetPath: String){
@@ -26,7 +27,16 @@ class Score (var sheetPath: String){
 
   //END CONSTRUCTOR
 
+  //stampa dell'oggetto score
+  def print(myBpm: Int): Unit = {
+    println("###INIZIO###")
+    for (note <- noteList){
+      println(note.getNoteValue(myBpm) + ": " + note.getNoteName() + note.getOctave())
+    }
+    println("###FINE###")
+  }
 
+  //funzione che calcola l'ottava centrale come media delle ottave
   def getCentralOctave(): Int = {
     var average = 0
     for (note <- noteList) {
@@ -34,5 +44,28 @@ class Score (var sheetPath: String){
     }
     average = average/noteList.length
     return average
+  }
+
+  //funzione che utilizza il rilevamento delle alterazioni per riconoscere la tonalità
+  //per ogni alterazione rilevata si setta a true il valore corrispondente nella Map con chiavi le alterazioni
+  //quindi si controlla quale alterazione è stata rilevata dando "priorità secondo il circolo delle 5"
+  //es: è stato rilevato "FA#", allora solo lui è in chiave, di conseguenza la tonalità è sol maggiore
+  //es: è stato rilvevato "SOL#", allora sono in chiave anche FA# e DO# e non serve controllare, la tonalità è LA M
+  //es: nessuna alterazione rilevata: la tonalità è DO maggiore
+  def getTonality(): String = {
+    val sharpsFound = Map ("FA#"-> false, "DO#" -> false,"SOL#"-> false,"RE#"-> false, "LA#"-> false)
+    for (note <- noteList) {
+     if (sharpsFound.contains(note.getNoteName())) sharpsFound(note.getNoteName())=true
+    }
+    val note = new Note(0,0)
+    var sharpToCheck = "LA#"
+    for (i <- 1 to sharpsFound.size) {
+      if (sharpsFound(sharpToCheck)==true) {
+        return note.getNoteName(note.getRelativePitchByNoteName(sharpToCheck)+1)
+      }
+      else
+        sharpToCheck = note.getNoteName((note.getRelativePitchByNoteName(sharpToCheck)+5)%12)
+    }
+    return "DO"
   }
 }
