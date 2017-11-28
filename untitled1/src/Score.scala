@@ -38,12 +38,18 @@ class Score (var sheetPath: String){
 
   //funzione che calcola l'ottava centrale come media delle ottave
   def getCentralOctave(): Int = {
-    var average = 0
+    var average = 0f
+    var deviation = 0f
     for (note <- noteList) {
       average+=note.getOctave()
     }
-    average = average/noteList.length
-    return average
+    average = average/noteList.length.toFloat
+    //aggiunto arrotondamento
+    deviation = average - average.toInt.toFloat
+    if (deviation >= 0.5)
+      return (average.toInt + 1)
+    else
+      return average.toInt
   }
 
   //funzione che utilizza il rilevamento delle alterazioni per riconoscere la tonalità
