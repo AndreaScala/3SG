@@ -50,6 +50,19 @@ class Note (var pitch: Int, var time: Float) {
     }
   }
 
+  def getNumericNoteValue (noteValue: String): Float = {
+    noteValue match {
+      case "Semibreve" => 4f
+      case "Minima" => 2f
+      case "Semiminima" => 1f
+      case "Croma" => 0.5f
+      case "Semicroma" => 0.25f
+      case "Biscroma" => 0.125f
+      case "Semibiscroma" => 0.0625f
+      case _ => getNumericNoteValue(noteValue.split(' ')(0))*3f/2f
+    }
+  }
+
   def getNoteValue(bpm: Int): String = {
     getNoteValue(bpm.toFloat); //overloading del metodo per ragioni di ricorsione
   }
