@@ -23,7 +23,7 @@ class Score (var sheetPath: String){
     //Aggiunta della nota al ListBuffer
     noteList.append(nowNote)
   }
-  bufferedSource.close;
+  bufferedSource.close
 
   //END CONSTRUCTOR
 
@@ -84,7 +84,7 @@ class Score (var sheetPath: String){
   //Se è riuscito a testare tutto il brano e terminare col valore zero allora il tempo del brano è stato individuato.
   def getTempo(bpm: Int): String = {
     var barSaturator = 0f
-    var value = 1.5f;
+    var value = 1.5f
     while (value <100) {
       barSaturator = 0f
       for (note <- noteList if barSaturator < value) {
