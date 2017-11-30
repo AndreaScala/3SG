@@ -10,12 +10,21 @@ object  Main extends App {
   val myBpm = command(1).toInt
   val score = new Score("src\\" + command(0)+ ".txt")
 
-  score.print(myBpm)
+  println("Cosa si desidera fare?\n" +
+    "1) Analizza note partitura\n" +
+    "2) Rileva Ottava Centrale\n" +
+    "3) Rileva Tonalità\n" +
+    "4) Rileva Tempo")
 
-  println("\nL'ottava centrale è la "+score.getCentralOctave())
+  val options = scala.io.StdIn.readLine().split(' ')
 
-  println("\nLa tonalità è (presumibilmente) "+score.getTonality()+" Maggiore")
-
-  println("\nIl tempo del brano è "+score.getTempo(myBpm))
-
+  for(option <- options) {
+    option.toInt match {
+      case 1 => score.print (myBpm)
+      case 2 => println ("\nL'ottava centrale è la " + score.getCentralOctave () )
+      case 3 => println ("\nLa tonalità è (presumibilmente) " + score.getTonality () + " Maggiore")
+      case 4 => println ("\nIl tempo del brano è " + score.getTempo (myBpm) )
+      case _ => println("Comando non valido")
+    }
+  }
 }
