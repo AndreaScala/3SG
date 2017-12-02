@@ -25,11 +25,11 @@ caratteristiche inusuali, come il terzo file d'esempio.
 I tre file d'esempio sono:
 1 - We Wish You a Merry Christmas (bpm usati: 120). Piccolo e semplice brano di prova utilizzato come test nelle fasi iniziali dello sviluppo.
 Tonalità effettiva: SOL Maggiore (tutti i FA sono diesis (#)). Tempo effettivo: 3/4.
-2 - Marcia alla Turca (bpm usati: 130). Celebre rondò di Mozart (quello della pubblicità della carta igienica foxy TIE'), brano sufficientemente veloce e complesso.
+2 - Marcia alla Turca (bpm usati: 130). Celebre rondò di Mozart, brano sufficientemente veloce e complesso.
 Tonalità effettiva: LA Maggiore. Tempo effettivo: 4/4.
-3 - Take Five (bmp usati: 156). Celebre assolo di tromba Jazz di Dave Brubeck (quello della pubblicità della Banca Mediolanum). Questo brano è
-stato usato nelle fasi finali dello sviluppo. Presenta fraseggi e tempi molto inusuali (nel Jazz è tipica l'improvvisazione e la completa libertà
-espressiva, a differenza dei canoni imposti dalla musica classica).
+3 - Take Five (bmp usati: 156). Celebre assolo di tromba Jazz di Dave Brubeck. Questo brano è stato usato nelle fasi finali dello sviluppo.
+Presenta fraseggi e tempi molto inusuali (nel Jazz è tipica l'improvvisazione e la completa libertà espressiva,
+a differenza dei canoni imposti dalla musica classica).
 Tonalità effettiva: SI Maggiore. Tempo effettivo: 5/4 (tempo ritrovato in pochissimi brani).
 
 NB.: E' possibile interpretare i brani anche con bpm diversi da quelli con il quale sono stati composti. Il risultato sarà una conseguente modifica
