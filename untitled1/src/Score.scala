@@ -29,11 +29,18 @@ class Score (var sheetPath: String){
 
   //stampa dell'oggetto score
   def print(myBpm: Int): Unit = {
+    val tempo = if (getTempo(myBpm)._2==4) getTempo(myBpm)._1.toFloat else getTempo(myBpm)._1.toFloat/2f
+    var barSaturator = 0f
+    var color = Console.WHITE
     println("###INIZIO###")
     for (note <- noteList){
-      println(note.getNoteValue(myBpm) + ": " + note.getNoteName() + note.getOctave())
+      color = if (barSaturator==0f && tempo!=0) Console.BLACK else Console.WHITE
+      println(color + note.getNoteValue(myBpm) + ": " + note.getNoteName() + note.getOctave())
+
+      barSaturator+=note.getNumericNoteValue(note.getNoteValue(myBpm))
+      barSaturator = if (barSaturator==tempo) 0 else barSaturator
     }
-    println("###FINE###")
+    println(Console.WHITE + "###FINE###")
   }
 
   //funzione che calcola l'ottava centrale come media delle ottave
@@ -82,7 +89,7 @@ class Score (var sheetPath: String){
   //rientrino all'interno del tempo scelto e non sforino. Ogni volta che il test non funziona, si testa il tempo successivo.
   //Implementazione: un contatore a saturazione si resetta ogni volta che la somma dei valori dei brani raggiunge il tempo
   //Se è riuscito a testare tutto il brano e terminare col valore zero allora il tempo del brano è stato individuato.
-  def getTempo(bpm: Int): String = {
+  def getTempo(bpm: Int): (Int, Int) = {
     var barSaturator = 0f
     var value = 1.5f
     while (value <100) {
@@ -93,11 +100,11 @@ class Score (var sheetPath: String){
       }
       if (barSaturator==0)
         return value match {
-          case eighth if eighth%1!=0 => (2f*eighth).toInt.toString +"/8"
-          case quarter => quarter.toInt.toString + "/4"
+          case eighth if eighth%1!=0 => ((2f*eighth).toInt, 8)
+          case quarter => (quarter.toInt, 4)
         }
       value+=0.5f
     }
-    return "...boh, sarà progressive rock"
+    return (0,0)
   }
 }

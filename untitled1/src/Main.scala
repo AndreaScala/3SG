@@ -22,9 +22,13 @@ object  Main extends App {
     for(option <- options) {
       option.toInt match {
         case 1 => score.print (myBpm)
-        case 2 => println ("\nL'ottava centrale è la " + score.getCentralOctave () )
-        case 3 => println ("\nLa tonalità è (presumibilmente) " + score.getTonality () + " Maggiore")
-        case 4 => println ("\nIl tempo del brano è " + score.getTempo (myBpm) )
+        case 2 => println ("\nL'ottava centrale è la " + score.getCentralOctave)
+        case 3 => println ("\nLa tonalità è (presumibilmente) " + score.getTonality + " Maggiore")
+        case 4 => {
+          val tempo = score.getTempo(myBpm)
+          if (tempo!=(0,0))println ("\nIl tempo del brano è " + tempo._1.toString + "/" + tempo._2.toString)
+          else println("Il brano è progressive e ho fagghiato a trovare il tempo\n")
+        }
         case 0 => {
           println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 1 Dicembre 2017")
           System.exit(0)
