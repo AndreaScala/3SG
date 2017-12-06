@@ -15,7 +15,8 @@ object  Main extends App {
       "2) Rileva Ottava Centrale\n" +
       "3) Rileva Tonalità\n" +
       "4) Rileva Tempo\n" +
-      "0) Esci dall'apllicazione")
+      "5) Scrivi note su file\n" +
+      "0) Esci dall'applicazione")
 
     var options = scala.io.StdIn.readLine().split(' ')
 
@@ -29,8 +30,12 @@ object  Main extends App {
           if (tempo!=(0,0))println ("\nIl tempo del brano è " + tempo._1.toString + "/" + tempo._2.toString)
           else println("Il brano è progressive e ho fagghiato a trovare il tempo\n")
         }
+        case 5 => {
+          score.fprint(myBpm)
+          println("Scrittura su file eseguita con successo")
+        }
         case 0 => {
-          println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 1 Dicembre 2017")
+          println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 6 Dicembre 2017")
           System.exit(0)
         }
         case _ => println("Comando non valido")

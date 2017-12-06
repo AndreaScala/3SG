@@ -1,3 +1,5 @@
+import java.io.File
+import java.io.PrintWriter
 import scala.collection.mutable.ListBuffer
 import scala.collection.mutable.Map
 import scala.io.Source
@@ -41,6 +43,16 @@ class Score (var sheetPath: String){
       barSaturator = if (barSaturator==tempo) 0 else barSaturator
     }
     println(Console.WHITE + "###FINE###")
+  }
+
+  //scrittura score su file
+  def fprint(myBpm: Int) : Unit = {
+    val pw = new PrintWriter(new File("score.txt"))
+    pw.write(myBpm.toInt + "\n")
+    for (note <- noteList){
+      pw.write(note.getNoteValue(myBpm) + " " + note.getNoteName() + " " + note.getOctave() + "\n")
+    }
+    pw.close()
   }
 
   //funzione che calcola l'ottava centrale come media delle ottave
