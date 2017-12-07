@@ -31,7 +31,8 @@ object  Main extends App {
           else println("Il brano è progressive e ho fagghiato a trovare il tempo\n")
         }
         case 5 => {
-          score.fprint(myBpm)
+          println("Con che nome salvare il file?")
+          score.fprint(myBpm, scala.io.StdIn.readLine() + ".txt")
           println("Scrittura su file eseguita con successo")
         }
         case 0 => {

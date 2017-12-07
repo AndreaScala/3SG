@@ -46,9 +46,9 @@ class Score (var sheetPath: String){
   }
 
   //scrittura score su file
-  def fprint(myBpm: Int) : Unit = {
-    val pw = new PrintWriter(new File("score.txt"))
-    pw.write(myBpm.toInt + "\n")
+  def fprint(myBpm: Int, fileName: String) : Unit = {
+    val pw = new PrintWriter(new File(fileName))
+    pw.write("BPM "+myBpm.toInt + "\n")
     for (note <- noteList){
       pw.write(note.getNoteValue(myBpm) + " " + note.getNoteName() + " " + note.getOctave() + "\n")
     }
