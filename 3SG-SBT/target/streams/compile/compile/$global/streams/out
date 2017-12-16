@@ -1,4 +1,4 @@
-[error] C:\Users\utente\IdeaProjects\3SG\src\main\scala\Main.scala:11:19: not found: type Score
-[error]   val score = new Score("src\\" + command(0)+ ".txt")
-[error]                   ^
+[error] C:\Users\utente\IdeaProjects\3SG-SBT\src\main\scala\Main.scala:43:30: not found: value Source
+[error]           val playerSource = Source.fromFile("src\\Player.R")
+[error]                              ^
 [error] one error found

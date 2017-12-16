@@ -1,3 +1,6 @@
+import org.ddahl.rscala._
+import  scala.io.Source
+
 object Main extends App {
   println("SCALA'S SCALE by Scala & Gerloni")
   println("Con questo programma è possibile:\n" +
@@ -16,6 +19,7 @@ object Main extends App {
       "3) Rileva Tonalità\n" +
       "4) Rileva Tempo\n" +
       "5) Scrivi note su file\n" +
+      "6) Riproduci melodia\n" +
       "0) Esci dall'applicazione")
 
     var options = scala.io.StdIn.readLine().split(' ')
@@ -34,6 +38,11 @@ object Main extends App {
           println("Con che nome salvare il file?")
           score.fprint(myBpm, scala.io.StdIn.readLine() + ".txt")
           println("Scrittura su file eseguita con successo")
+        }
+        case 6 => {
+          val R = RClient()
+          val playerSource = Source.fromFile("src\\Player.R")
+          R.eval(playerSource.mkString)
         }
         case 0 => {
           println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 6 Dicembre 2017")

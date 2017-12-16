@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="compile"
 		confs="default, compile, runtime, test, provided, optional"
-		date="20171216152110"/>
+		date="20171216162057"/>
 	<dependencies>
 		<module organisation="com.trueaccord.lenses" name="lenses_2.12">
 			<revision name="0.4.12" status="release" pubdate="20170604083113" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/trueaccord/lenses" downloaded="false" searched="false" default="false" conf="master(*), compile, runtime(*), runtime, compile(*), master" position="38">
