@@ -1,0 +1,1 @@
+scalac -bootclasspath C:\Users\utente\.sbt\boot\scala-2.12.4\lib\scala-library.jar -classpath C:\Users\utente\IdeaProjects\3SG-SBT\target\scala-2.12\classes C:\Users\utente\IdeaProjects\3SG-SBT\src\main\scala\Main.scala C:\Users\utente\IdeaProjects\3SG-SBT\src\main\scala\Note.scala C:\Users\utente\IdeaProjects\3SG-SBT\src\main\scala\Score.scala

@@ -1,0 +1,4 @@
+[error] C:\Users\utente\IdeaProjects\3SG\src\main\scala\Main.scala:11:19: not found: type Score
+[error]   val score = new Score("src\\" + command(0)+ ".txt")
+[error]                   ^
+[error] one error found
