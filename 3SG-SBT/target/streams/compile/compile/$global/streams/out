@@ -1,4 +1,7 @@
-[error] C:\Users\utente\IdeaProjects\3SG-SBT\src\main\scala\Main.scala:43:30: not found: value Source
-[error]           val playerSource = Source.fromFile("src\\Player.R")
-[error]                              ^
-[error] one error found
+[error] C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:2:12: object ddahl is not a member of package org
+[error] import org.ddahl.rscala._
+[error]            ^
+[error] C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:43:19: not found: value RClient
+[error]           val R = RClient()
+[error]                   ^
+[error] two errors found

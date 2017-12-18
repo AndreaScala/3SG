@@ -1,5 +1,5 @@
+import scala.io.Source
 import org.ddahl.rscala._
-import  scala.io.Source
 
 object Main extends App {
   println("SCALA'S SCALE by Scala & Gerloni")

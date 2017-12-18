@@ -1,1 +1,33 @@
-[debug] No changes
+[debug] 
+[debug] Initial source changes: 
+[debug] 	removed:Set()
+[debug] 	added: Set()
+[debug] 	modified: Set(C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala)
+[debug] Invalidated products: Set()
+[debug] External API changes: API Changes: Set()
+[debug] Modified binary dependencies: Set()
+[debug] Initial directly invalidated classes: Set(Main)
+[debug] 
+[debug] Sources indirectly invalidated by:
+[debug] 	product: Set()
+[debug] 	binary dep: Set()
+[debug] 	external source: Set()
+[debug] All initially invalidated classes: Set(Main)
+[debug] All initially invalidated sources:Set(C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala)
+[info] Compiling 1 Scala source to C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\classes ...
+[debug] Getting org.scala-sbt:compiler-bridge_2.12:1.0.5:compile for Scala 2.12.4
+[debug] Getting org.scala-sbt:compiler-bridge_2.12:1.0.5:compile for Scala 2.12.4
+[debug] [zinc] Running cached compiler 57a235b6 for Scala compiler version 2.12.4
+[debug] [zinc] The Scala compiler is invoked with:
+[debug] 	-bootclasspath
+[debug] 	C:\Users\andre\.sbt\boot\scala-2.12.4\lib\scala-library.jar
+[debug] 	-classpath
+[debug] 	C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\classes;C:\Users\andre\.ivy2\cache\org.ddahl\rscala_2.12\jars\rscala_2.12-2.5.0.jar;C:\Users\andre\.sbt\boot\scala-2.12.4\lib\scala-compiler.jar;C:\Users\andre\.sbt\boot\scala-2.12.4\lib\scala-reflect.jar;C:\Users\andre\.ivy2\cache\org.scala-lang.modules\scala-xml_2.12\bundles\scala-xml_2.12-1.0.6.jar;C:\Users\andre\.ivy2\cache\org.scala-lang\scalap\jars\scalap-2.12.4.jar
+[debug] Scala compilation took 2.122383141 s
+[info] Done compiling.
+[debug] New invalidations:
+[debug] 	Set()
+[debug] Initial set of included nodes: Set()
+[debug] Previously invalidated, but (transitively) depend on new invalidations:
+[debug] 	Set()
+[debug] All newly invalidated classes after taking into account (previously) recompiled classes:Set()
