@@ -1022,35 +1022,35 @@
 [debug] == resolving dependencies 3sg#3sg$sources;0.1->org.scala-lang#scala-compiler;2.12.4 [scala-tool->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 		tried C:\Users\andre\.ivy2\local\org.scala-lang\scalap\2.12.4\srcs\scalap-sources.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar(src)
-[debug] 		tried https://repo1.maven.org/maven2/org/scala-lang/scalap/2.12.4/scalap-2.12.4-sources.jar
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.4!scala-library.jar(src)
-[debug] 		tried C:\Users\andre\.ivy2\local\org.ddahl\rscala_2.12\2.5.0\srcs\rscala_2.12-sources.jar
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
+[debug] 		tried C:\Users\ilari\.ivy2\local\org.ddahl\rscala_2.12\2.5.0\srcs\rscala_2.12-sources.jar
+[debug] 		tried C:\Users\ilari\.ivy2\local\org.scala-lang\scalap\2.12.4\srcs\scalap-sources.jar
+[debug] 	[NOT REQUIRED] jline#jline;2.14.5!jline.jar(src)
+[debug] 		tried https://repo1.maven.org/maven2/org/scala-lang/scalap/2.12.4/scalap-2.12.4-sources.jar
 [debug] 		tried https://repo1.maven.org/maven2/org/ddahl/rscala_2.12/2.5.0/rscala_2.12-2.5.0-sources.jar
 [info] downloading https://repo1.maven.org/maven2/org/scala-lang/scalap/2.12.4/scalap-2.12.4-sources.jar ...
 [debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scalap/2.12.4/scalap-2.12.4-sources.jar
 [info] downloading https://repo1.maven.org/maven2/org/ddahl/rscala_2.12/2.5.0/rscala_2.12-2.5.0-sources.jar ...
 [debug] 	public: downloading https://repo1.maven.org/maven2/org/ddahl/rscala_2.12/2.5.0/rscala_2.12-2.5.0-sources.jar
 [debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scalap/2.12.4/scalap-2.12.4-sources.jar.sha1
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/ddahl/rscala_2.12/2.5.0/rscala_2.12-2.5.0-sources.jar.sha1
 [debug] sha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scalap/2.12.4/scalap-2.12.4-sources.jar
-[info] 	[SUCCESSFUL ] org.scala-lang#scalap;2.12.4!scalap.jar(src) (782ms)
+[info] 	[SUCCESSFUL ] org.scala-lang#scalap;2.12.4!scalap.jar(src) (337ms)
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/ddahl/rscala_2.12/2.5.0/rscala_2.12-2.5.0-sources.jar.sha1
 [debug] sha1 OK for https://repo1.maven.org/maven2/org/ddahl/rscala_2.12/2.5.0/rscala_2.12-2.5.0-sources.jar
-[info] 	[SUCCESSFUL ] org.ddahl#rscala_2.12;2.5.0!rscala_2.12.jar(src) (922ms)
-[debug] 	[NOT REQUIRED] jline#jline;2.14.5!jline.jar(src)
-[debug] :: resolution report :: resolve 78ms :: artifacts dl 953ms
-[debug] 	report for 3sg#3sg$sources;0.1 compile produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-compile.xml
-[debug] 	report for 3sg#3sg$sources;0.1 runtime produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-runtime.xml
-[debug] 	report for 3sg#3sg$sources;0.1 test produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-test.xml
-[debug] 	report for 3sg#3sg$sources;0.1 provided produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-provided.xml
-[debug] 	report for 3sg#3sg$sources;0.1 optional produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-optional.xml
-[debug] 	report for 3sg#3sg$sources;0.1 compile-internal produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-compile-internal.xml
-[debug] 	report for 3sg#3sg$sources;0.1 runtime-internal produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-runtime-internal.xml
-[debug] 	report for 3sg#3sg$sources;0.1 test-internal produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-test-internal.xml
-[debug] 	report for 3sg#3sg$sources;0.1 plugin produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-plugin.xml
-[debug] 	report for 3sg#3sg$sources;0.1 pom produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-pom.xml
-[debug] 	report for 3sg#3sg$sources;0.1 scala-tool produced in C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-scala-tool.xml
-[debug] 	resolve done (78ms resolve - 953ms download)
+[info] 	[SUCCESSFUL ] org.ddahl#rscala_2.12;2.5.0!rscala_2.12.jar(src) (575ms)
+[debug] :: resolution report :: resolve 116ms :: artifacts dl 575ms
+[debug] 	report for 3sg#3sg$sources;0.1 compile produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-compile.xml
+[debug] 	report for 3sg#3sg$sources;0.1 runtime produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-runtime.xml
+[debug] 	report for 3sg#3sg$sources;0.1 test produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-test.xml
+[debug] 	report for 3sg#3sg$sources;0.1 provided produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-provided.xml
+[debug] 	report for 3sg#3sg$sources;0.1 optional produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-optional.xml
+[debug] 	report for 3sg#3sg$sources;0.1 compile-internal produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-compile-internal.xml
+[debug] 	report for 3sg#3sg$sources;0.1 runtime-internal produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-runtime-internal.xml
+[debug] 	report for 3sg#3sg$sources;0.1 test-internal produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-test-internal.xml
+[debug] 	report for 3sg#3sg$sources;0.1 plugin produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-plugin.xml
+[debug] 	report for 3sg#3sg$sources;0.1 pom produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-pom.xml
+[debug] 	report for 3sg#3sg$sources;0.1 scala-tool produced in C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\target\scala-2.12\resolution-cache\reports\3sg-3sg$sources-scala-tool.xml
+[debug] 	resolve done (116ms resolve - 575ms download)

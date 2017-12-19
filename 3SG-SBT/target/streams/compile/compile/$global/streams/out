@@ -1,7 +1,4 @@
-[error] C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:2:12: object ddahl is not a member of package org
-[error] import org.ddahl.rscala._
-[error]            ^
-[error] C:\Users\andre\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:43:19: not found: value RClient
-[error]           val R = RClient()
-[error]                   ^
-[error] two errors found
+[error] C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:53:24: value delete is not a member of scala.io.BufferedSource
+[error]           playerSource.delete()
+[error]                        ^
+[error] one error found

@@ -4,7 +4,7 @@
 		module="3sg$sources"
 		revision="0.1"
 		status="integration"
-		publication="20171218210713"
+		publication="20171219112048"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

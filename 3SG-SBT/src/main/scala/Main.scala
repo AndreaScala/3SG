@@ -20,6 +20,7 @@ object Main extends App {
       "4) Rileva Tempo\n" +
       "5) Scrivi note su file\n" +
       "6) Riproduci melodia\n" +
+      "7) Riproduci melodia con BPM a scelta\n" +
       "0) Esci dall'applicazione")
 
     var options = scala.io.StdIn.readLine().split(' ')
@@ -39,9 +40,15 @@ object Main extends App {
           score.fprint(myBpm, scala.io.StdIn.readLine() + ".txt")
           println("Scrittura su file eseguita con successo")
         }
-        case 6 => {
+        case 6 | 7 => {
+          if (option.toInt==7) {
+            println("Scegli i BPM nuovi")
+            score.fprint(scala.io.StdIn.readLine().toInt, "toPlay.txt")
+          }
+          else
+            score.fprint(myBpm, "toPlay.txt")
           val R = RClient()
-          val playerSource = Source.fromFile("src\\Player.R")
+          val playerSource = Source.fromFile("src\\Playe.R")
           R.eval(playerSource.mkString)
         }
         case 0 => {
