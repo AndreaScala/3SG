@@ -4,7 +4,7 @@
 		module="3sg$sbt_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20171219112042"
+		publication="20171220090708"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
