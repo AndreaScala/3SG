@@ -1,4 +1,4 @@
-[error] C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:53:24: value delete is not a member of scala.io.BufferedSource
-[error]           playerSource.delete()
-[error]                        ^
+[error] C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:27:37: not found: value newBpm
+[error]     print(score.createStringOfNotes(newBpm))
+[error]                                     ^
 [error] one error found

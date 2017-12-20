@@ -24,7 +24,6 @@ object Main extends App {
       "0) Esci dall'applicazione")
 
     var options = scala.io.StdIn.readLine().split(' ')
-
     for(option <- options) {
       option.toInt match {
         case 1 => score.print (myBpm)
@@ -41,13 +40,15 @@ object Main extends App {
           println("Scrittura su file eseguita con successo")
         }
         case 6 | 7 => {
+          var newBpm = 0
           if (option.toInt==7) {
             println("Scegli i BPM nuovi")
-            score.fprint(scala.io.StdIn.readLine().toInt, "toPlay.txt")
+            newBpm = scala.io.StdIn.readInt()
           }
           else
-            score.fprint(myBpm, "toPlay.txt")
+            newBpm = myBpm
           val R = RClient()
+          R.scoreString = score.createStringOfNotes(newBpm)
           val playerSource = Source.fromFile("src\\Playe.R")
           R.eval(playerSource.mkString)
         }

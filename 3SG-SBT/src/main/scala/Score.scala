@@ -54,6 +54,14 @@ class Score (var sheetPath: String){
     pw.close()
   }
 
+  def createStringOfNotes(myBpm: Int) : String =  {
+    var scoreString = ""
+    scoreString+="BPM "+ myBpm.toInt + "\n"
+    for (note <- noteList)
+      scoreString+=note.getNoteValue(myBpm) + " " + note.getNoteName() + " " + note.getOctave() + "\n"
+    return scoreString
+  }
+
   //funzione che calcola l'ottava centrale come media delle ottave
   def getCentralOctave(): Int = {
     var average = 0f

@@ -7,11 +7,11 @@ library("audio")
 
 #Legge il file di testo, restituisce un oggetto con dentro l'insieme di pitch (altezza delle note) e duration (durata delle note)
 #Formato delle righe del file di testo: DURATA NOTA OTTAVA (es: Semiminima FA# 4)
-getScore <- function(fileName, isFirstLineBpm = TRUE) {
-    notelist <- readLines(con = fileName)
+getScore <- function(scoreString, isFirstLineBpm = TRUE) {
+    notelist <- strsplit(scoreString, "\n")[[1]]
     pitchlist <- c()
     durationlist <- c()
-    if (isFirstLineBpm) { #Estrapola i bpm se sono la prima riga del file di testo
+    if (isFirstLineBpm) { #Estrapola i bpm se sono la prima riga della lista di stringhe passata
         bpm <- strsplit(notelist[1], " ")[[1]][2]
         bpm <- strtoi(bpm)
         notelist <- notelist[-1]
@@ -56,7 +56,8 @@ getScore <- function(fileName, isFirstLineBpm = TRUE) {
     return (result)
 }
 
-score <- getScore("toPlay.txt")
+#la lunga stringa scoreString (una stringifizzazione dello spartito) viene passata come parametro dal programma SCALA
+score <- getScore(scoreString)
 mynotelist <- score$noteList
 
 #Tipo enumerativo per la corrispondenza fra i nomi delle note ed il valore intero corrispondente
