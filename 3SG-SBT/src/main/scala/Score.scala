@@ -17,7 +17,7 @@ class Score (var sheetPath: String){
     val noteArray = line.split("t").toList
     //Isolazione Pitch
     val nowPitch = noteArray.head.toInt
-    //Isolazione Duration (l'ultimo char viene eliminato in quanto è sempre ';')
+    //Isolamento Duration (l'ultimo char viene eliminato in quanto è sempre ';')
     val nowDuration = noteArray.last.dropRight(1).toFloat
     //Incapsulamento delle info estratte in un oggetto Nota
     val nowNote = new Note(nowPitch,nowDuration)
@@ -27,6 +27,10 @@ class Score (var sheetPath: String){
   bufferedSource.close
 
   //END CONSTRUCTOR
+
+  //SECONDARY CONSTRUCTOR
+
+  //END SECONDARY CONSTRUCTOR
 
 
   //stampa dell'oggetto score
@@ -45,13 +49,20 @@ class Score (var sheetPath: String){
     println(Console.WHITE + "###FINE###")
   }
 
-  //scrittura score su file
-  def fprint(myBpm: Int, fileName: String) : Unit = {
+  //scrittura score su file in modo leggibile,  nel formato DURATA NOTA OTTAVA, con prima riga BPM
+  def printOnFile(myBpm: Int, fileName: String) : Unit = {
     val pw = new PrintWriter(new File(fileName))
     pw.write("BPM "+myBpm.toInt + "\n")
     for (note <- noteList){
       pw.write(note.getNoteValue(myBpm) + " " + note.getNoteName() + " " + note.getOctave() + "\n")
     }
+    pw.close()
+  }
+
+  //scrittura score su file uguale a file di ingresso 3SG, nel formato PITCHtTIME
+  def printOnFile(fileName: String): Unit = {
+    val pw = new PrintWriter(new File(fileName))
+    for (note <- noteList) pw.write(note.pitch + "t" + note.time+ "\n")
     pw.close()
   }
 
@@ -126,5 +137,10 @@ class Score (var sheetPath: String){
       value+=0.5f
     }
     return (0,0)
+  }
+
+  //Trasporta melodia brano di un valore interval di semitoni.
+  def transpose(interval: Int): Unit = {
+    for (note <-noteList if note.pitch + interval>0) note.pitch = note.pitch + interval
   }
 }

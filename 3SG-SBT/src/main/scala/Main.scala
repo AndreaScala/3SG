@@ -20,9 +20,11 @@ object Main extends App {
       "2) Rileva Ottava Centrale\n" +
       "3) Rileva Tonalità\n" +
       "4) Rileva Tempo\n" +
-      "5) Scrivi note su file\n" +
-      "6) Riproduci melodia\n" +
-      "7) Riproduci melodia con BPM a scelta\n" +
+      "5) Scrivi note su file (Formato DURATA NOTA OTTAVA con prima riga BPM)\n" +
+      "6) Scrivi note su file (Formato MIDI & PURE DATA / PITCHtTIME)\n" +
+      "7) Riproduci melodia\n" +
+      "8) Riproduci melodia con BPM a scelta\n" +
+      "9) Trasporta melodia\n" +
       "0) Esci dall'applicazione")
 
     var options = scala.io.StdIn.readLine().split(' ')
@@ -37,14 +39,15 @@ object Main extends App {
             if (tempo!=(0,0))println ("\nIl tempo del brano è " + tempo._1.toString + "/" + tempo._2.toString)
             else println("Il brano è progressive e ho fagghiato a trovare il tempo\n")
           }
-          case 5 => {
+          case 5 | 6 => {
             println("Con che nome salvare il file?")
-            score.fprint(myBpm, scala.io.StdIn.readLine() + ".txt")
+            if (option.toInt==5) score.printOnFile(myBpm, "src\\"+scala.io.StdIn.readLine() + ".txt")
+            else score.printOnFile("src\\"+scala.io.StdIn.readLine() + ".txt")
             println("Scrittura su file eseguita con successo")
           }
-          case 6 | 7 => {
+          case 7 | 8 => {
             var newBpm = 0
-            if (option.toInt==7) {
+            if (option.toInt==8) {
               println("Scegli i BPM nuovi")
               newBpm = scala.io.StdIn.readInt()
             }
@@ -54,6 +57,11 @@ object Main extends App {
             R.scoreString = score.createStringOfNotes(newBpm)
             val playerSource = Source.fromFile("src\\Playe.R")
             R.eval(playerSource.mkString)
+          }
+          case 9 => {
+            println("Di quanti semitoni trasportare la melodia?")
+            score.transpose(scala.io.StdIn.readInt())
+            println("Transposizione effettuata!")
           }
           case 0 => {
             println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 6 Dicembre 2017")
@@ -76,6 +84,7 @@ object Main extends App {
           val playerSource = Source.fromFile("src\\Playe.R")
           R.eval(playerSource.mkString)
         }
+        case e if option.toInt==0 => System.exit(0)
         case e => println("Comando non valido")
       }
     }

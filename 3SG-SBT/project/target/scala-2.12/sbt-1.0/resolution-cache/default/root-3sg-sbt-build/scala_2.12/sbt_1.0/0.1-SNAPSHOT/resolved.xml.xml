@@ -4,7 +4,7 @@
 		module="root-3sg-sbt-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171220090643"
+		publication="20171223155248"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

@@ -65,6 +65,8 @@ notes <- c(LA = 0, SI = 2, DO = 3, RE = 5, MI = 7, FA = 8, SOL = 10)
 
 song <- data_frame(pitch = score$pitchList, duration = score$durationList)
 #Utilizzo del valore di pitch per trovare la frequenza della sinusoide corrispondente
+toGraph <- c()
+
 song <-
     song %>%
     mutate(octave = substring(pitch, nchar(pitch)) %>% { suppressWarnings(as.numeric(.)) } %>%
