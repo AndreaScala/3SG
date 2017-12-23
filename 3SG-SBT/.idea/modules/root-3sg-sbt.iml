@@ -21,13 +21,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="SBT: org.ddahl:rscala_2.12:2.5.0:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang.modules:scala-xml_2.12:1.0.6:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scalap:2.12.4:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.12.4:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.12.4:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scala-compiler:2.12.4:jar" level="project" />
-    <orderEntry type="library" name="R User Library" level="project" />
-    <orderEntry type="library" name="R Skeletons" level="application" />
+    <orderEntry type="library" name="sbt: org.ddahl:rscala_2.12:2.5.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-compiler:2.12.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-reflect:2.12.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scalap:2.12.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-xml_2.12:1.0.6:jar" level="project" />
   </component>
 </module>
