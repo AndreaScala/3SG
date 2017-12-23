@@ -7,29 +7,29 @@
 		revision="0.1"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20171219112043"/>
+		date="20171223024445"/>
 	<dependencies>
 		<module organisation="org.ddahl" name="rscala_2.12">
-			<revision name="2.5.0" status="release" pubdate="20171125051449" resolver="public" artresolver="public" homepage="https://github.com/dbdahl/rscala/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="1">
+			<revision name="2.5.0" status="release" pubdate="20171125051449" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/dbdahl/rscala/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
 				<license name="GNU General Public License, Version 2" url="http://www.gnu.org/licenses/gpl-2.0.html"/>
 				<license name="GNU General Public License, Version 3" url="http://www.gnu.org/licenses/gpl-3.0.html"/>
 				<license name="BSD 3-Clause License" url="https://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="successful" details="" size="2166" time="332" location="C:\Users\ilari\.ivy2\cache\org.ddahl\rscala_2.12\ivy-2.5.0.xml" searched="true" original-local-location="C:\Users\ilari\.ivy2\cache\org.ddahl\rscala_2.12\ivy-2.5.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/ddahl/rscala_2.12/2.5.0/rscala_2.12-2.5.0.pom"/>
+				<metadata-artifact status="no" details="" size="3185" time="0" location="C:\Users\ilari\.ivy2\cache\org.ddahl\rscala_2.12\ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/ddahl/rscala_2.12/2.5.0/rscala_2.12-2.5.0.pom"/>
 				<caller organisation="3sg" name="3sg_2.12" conf="compile-internal, compile, provided, optional" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="0.1"/>
 				<artifacts>
-					<artifact name="rscala_2.12" type="jar" ext="jar" status="successful" details="" size="109602" time="1016" location="C:\Users\ilari\.ivy2\cache\org.ddahl\rscala_2.12\jars\rscala_2.12-2.5.0.jar">
+					<artifact name="rscala_2.12" type="jar" ext="jar" status="no" details="" size="109602" time="0" location="C:\Users\ilari\.ivy2\cache\org.ddahl\rscala_2.12\jars\rscala_2.12-2.5.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/ddahl/rscala_2.12/2.5.0/rscala_2.12-2.5.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scalap">
-			<revision name="2.12.4" status="release" pubdate="20171011093008" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+			<revision name="2.12.4" status="release" pubdate="20171011093008" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="successful" details="" size="1661" time="269" location="C:\Users\ilari\.ivy2\cache\org.scala-lang\scalap\ivy-2.12.4.xml" searched="true" original-local-location="C:\Users\ilari\.ivy2\cache\org.scala-lang\scalap\ivy-2.12.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scalap/2.12.4/scalap-2.12.4.pom"/>
+				<metadata-artifact status="no" details="" size="2673" time="0" location="C:\Users\ilari\.ivy2\cache\org.scala-lang\scalap\ivy-2.12.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scalap/2.12.4/scalap-2.12.4.pom"/>
 				<caller organisation="org.ddahl" name="rscala_2.12" conf="default, compile, runtime, master" rev="2.12.4" rev-constraint-default="2.12.4" rev-constraint-dynamic="2.12.4" callerrev="2.5.0"/>
 				<artifacts>
-					<artifact name="scalap" type="jar" ext="jar" status="successful" details="" size="509395" time="901" location="C:\Users\ilari\.ivy2\cache\org.scala-lang\scalap\jars\scalap-2.12.4.jar">
+					<artifact name="scalap" type="jar" ext="jar" status="no" details="" size="509395" time="0" location="C:\Users\ilari\.ivy2\cache\org.scala-lang\scalap\jars\scalap-2.12.4.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scalap/2.12.4/scalap-2.12.4.jar"/>
 					</artifact>
 				</artifacts>

@@ -1,3 +1,5 @@
+import java.io.StreamCorruptedException
+
 import scala.io.Source
 import org.ddahl.rscala._
 
@@ -25,38 +27,56 @@ object Main extends App {
 
     var options = scala.io.StdIn.readLine().split(' ')
     for(option <- options) {
-      option.toInt match {
-        case 1 => score.print (myBpm)
-        case 2 => println ("\nL'ottava centrale è la " + score.getCentralOctave)
-        case 3 => println ("\nLa tonalità è (presumibilmente) " + score.getTonality + " Maggiore")
-        case 4 => {
-          val tempo = score.getTempo(myBpm)
-          if (tempo!=(0,0))println ("\nIl tempo del brano è " + tempo._1.toString + "/" + tempo._2.toString)
-          else println("Il brano è progressive e ho fagghiato a trovare il tempo\n")
-        }
-        case 5 => {
-          println("Con che nome salvare il file?")
-          score.fprint(myBpm, scala.io.StdIn.readLine() + ".txt")
-          println("Scrittura su file eseguita con successo")
-        }
-        case 6 | 7 => {
-          var newBpm = 0
-          if (option.toInt==7) {
-            println("Scegli i BPM nuovi")
-            newBpm = scala.io.StdIn.readInt()
+      try {
+        option.toInt match {
+          case 1 => score.print (myBpm)
+          case 2 => println ("\nL'ottava centrale è la " + score.getCentralOctave)
+          case 3 => println ("\nLa tonalità è (presumibilmente) " + score.getTonality + " Maggiore")
+          case 4 => {
+            val tempo = score.getTempo(myBpm)
+            if (tempo!=(0,0))println ("\nIl tempo del brano è " + tempo._1.toString + "/" + tempo._2.toString)
+            else println("Il brano è progressive e ho fagghiato a trovare il tempo\n")
           }
-          else
-            newBpm = myBpm
+          case 5 => {
+            println("Con che nome salvare il file?")
+            score.fprint(myBpm, scala.io.StdIn.readLine() + ".txt")
+            println("Scrittura su file eseguita con successo")
+          }
+          case 6 | 7 => {
+            var newBpm = 0
+            if (option.toInt==7) {
+              println("Scegli i BPM nuovi")
+              newBpm = scala.io.StdIn.readInt()
+            }
+            else
+              newBpm = myBpm
+            val R = RClient()
+            R.scoreString = score.createStringOfNotes(newBpm)
+            val playerSource = Source.fromFile("src\\Playe.R")
+            R.eval(playerSource.mkString)
+          }
+          case 0 => {
+            println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 6 Dicembre 2017")
+            System.exit(0)
+          }
+          case _ => println("Comando non valido")
+        }
+      } catch {
+        case e if option=="somebody" => {
+          var scoreBody = new Score("src\\" +option + ".txt");
+          println("SOMEBODY")
+          var scoreCopy = new Score("src\\" + command(0)+ ".txt")
+          var i :Int = 0
+          for (note <- scoreCopy.noteList) {
+            note.pitch = scoreBody.noteList(i).pitch
+            i=(i+1)%scoreBody.noteList.length
+          }
           val R = RClient()
-          R.scoreString = score.createStringOfNotes(newBpm)
+          R.scoreString = scoreCopy.createStringOfNotes(myBpm)
           val playerSource = Source.fromFile("src\\Playe.R")
           R.eval(playerSource.mkString)
         }
-        case 0 => {
-          println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 6 Dicembre 2017")
-          System.exit(0)
-        }
-        case _ => println("Comando non valido")
+        case e => println("Comando non valido")
       }
     }
   }

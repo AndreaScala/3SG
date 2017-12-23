@@ -28,6 +28,7 @@ class Score (var sheetPath: String){
 
   //END CONSTRUCTOR
 
+
   //stampa dell'oggetto score
   def print(myBpm: Int): Unit = {
     val tempo = if (getTempo(myBpm)._2==4) getTempo(myBpm)._1.toFloat else getTempo(myBpm)._1.toFloat/2f

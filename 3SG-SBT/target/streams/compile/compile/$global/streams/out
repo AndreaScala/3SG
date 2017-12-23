@@ -1,4 +1,4 @@
-[error] C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:27:37: not found: value newBpm
-[error]     print(score.createStringOfNotes(newBpm))
-[error]                                     ^
-[error] one error found
+[warn] C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:79:14: This catches all Throwables. If this is really intended, use `case e : Throwable` to clear this warning.
+[warn]         case e => println("Comando non valido")
+[warn]              ^
+[warn] one warning found
