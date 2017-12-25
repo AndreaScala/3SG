@@ -61,7 +61,9 @@ if (nchar(xlimit)==0) {
 #Sta poi al programma leggere un vettore di nomi di valori (semibreve, minima puntata) e man mano modificare
 #il disegno delle note che passa in rassegna. Creato attraverso if in cascata
 
-plot(absoluteTimeList, naturalNotesList, main = "Spartito Automatico", subtitle = "Tipographe.R", xlab = "", ylab = "", xlim=xlimit)
+plot(
+    absoluteTimeList, naturalNotesList, main = "Spartito Automatico", subtitle = "Tipographe.R", xlab = "", ylab = "",
+    xlim=xlimit, xaxt='n', yaxt = 'n', ann=FALSE)
 
 j <- 1
 for (i in 1:length(naturalNotesList)) {
@@ -136,7 +138,7 @@ for (i in 1:length(naturalNotesList)){
 #DISEGNO DIESIS
 for (i in 1:length(noteList))
     if (substr(noteList[i], nchar(noteList[i])-1, nchar(noteList[i])-1) == "#")
-        points(absoluteTimeList[i] - 0.1, naturalNotesList[i], pch = 9)
+        points(absoluteTimeList[i] - 0.1, naturalNotesList[i], pch = 35)
 
 
 
