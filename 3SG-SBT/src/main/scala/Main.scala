@@ -9,7 +9,10 @@ object Main extends App {
     " - Dato un file di testo generato da un MIDI identificare le note e i loro valori\n" +
     " - Calcolare l'ottava centrale di riferimento\n" +
     " - Calcolare (con approssimazione statistica) la tonalità principale del brano\n" +
-    " - Calcolare il tempo (la misura) del brano")
+    " - Calcolare il tempo (la misura) del brano\n" +
+    " - Salvare le note analizzate su file in diversi formati\n" +
+    " - Riprodurre la melodia analizzata tramite script R\n" +
+    " - Stampare lo spartito analizzato tramite script R")
   println("\nInserire nome file e BPM: ")
   val command = scala.io.StdIn.readLine().split(' ')
   val myBpm = command(1).toInt
@@ -93,7 +96,7 @@ object Main extends App {
             R.eval(tipographerSource.mkString)
           }
           case 0 => {
-            println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 6 Dicembre 2017")
+            println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 25 Dicembre 2017")
             System.exit(0)
           }
           case _ => println("Comando non valido")

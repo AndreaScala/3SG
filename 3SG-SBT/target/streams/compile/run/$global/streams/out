@@ -10,3 +10,4 @@
 [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
 [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
 [error] 	at java.base/java.lang.Thread.run(Thread.java:844)
+[error] (compile:run) Nonzero exit code: 1

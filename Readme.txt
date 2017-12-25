@@ -19,6 +19,12 @@ Fra le funzionalità abbiamo:
 	Questa funzionalità si avvale di un metodo statistico per il calcolo dell'ottava centrale di riferimento.
 4 - Rilevazione Tempo Brano.
 	Usando un metodo "a tentativi" si cerca di suddividere il brano in gruppi di note consecutive dalla somma dei valori uguale, così da determinare la durata della battuta del brano.
+5 - Salvataggio su file
+	Le note analizzate vengono scritte su file di testo con possibilità di scegliere fra più formati per conservare le analisi fatte per applicazioni future.
+6 - Riproduzione melodia
+	Viene richiamato uno script R (tramite le libreria "rscala") che genera una sequenza di onde sinusoidali e li invia alla periferica di output audio basandosi sulle note analizzate. La melodia analizzate diventa quindi udibile.
+7 - Visualizzazione partitura
+	Viene richiamato uno script R che esegue un plot delle note analizzate mediante le funzionalità grafiche di R. Lo spartito analizzato è quindi visualizzato.
 
 Tutte le funzionalità sono implementate utilizzando algoritmi di Pattern Matching uniti a formule euristiche e algoritmi statistici applicati alla teoria musicale. Pertanto non sempre i risultati ottenuti sono perfettamente conformi alla realtà. Si è riuscito tuttavia ad ottenere un elevato grado di fedeltà. Si riescono infatti ad interpretare senza problemi tutte le note anche di brani piuttosto complessi, compresi quelli con caratteristiche inusuali, come il terzo file d'esempio.
 
