@@ -1,4 +1,7 @@
-[warn] C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:88:14: This catches all Throwables. If this is really intended, use `case e : Throwable` to clear this warning.
-[warn]         case e => println("Comando non valido")
-[warn]              ^
-[warn] one warning found
+[error] C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:73:17: only traits and abstract classes can have declared but undefined members
+[error]             var xlimit: String
+[error]                 ^
+[error] C:\Users\ilari\Desktop\3SG\3SG\3SG-SBT\src\main\scala\Main.scala:88:15: value update is not a member of Unit
+[error]               println("Digita battuta iniziale e battuta finale")
+[error]               ^
+[error] two errors found

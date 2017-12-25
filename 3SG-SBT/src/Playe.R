@@ -1,5 +1,9 @@
-#Installazione Package Necessari e Inclusione
+# Title     : PLAYE.R
+# Objective : Suonare uno spartito previo input di una stringa SCALA
 
+#injection di spartito nel formato DURATA NOTA OTTAVA sotto forma di stringa (scoreString)
+
+#Installazione Package Necessari e Inclusione
 if (!require("dplyr")) install.packages("dplyr")
 if (!require("audio")) install.packages("audio")
 library("dplyr")
@@ -58,7 +62,6 @@ getScore <- function(scoreString, isFirstLineBpm = TRUE) {
 
 #la lunga stringa scoreString (una stringifizzazione dello spartito) viene passata come parametro dal programma SCALA
 score <- getScore(scoreString)
-mynotelist <- score$noteList
 
 #Tipo enumerativo per la corrispondenza fra i nomi delle note ed il valore intero corrispondente
 notes <- c(LA = 0, SI = 2, DO = 3, RE = 5, MI = 7, FA = 8, SOL = 10)
@@ -97,3 +100,4 @@ song_wav <-
     do.call("c", .)
 #Riproduzione
 play(song_wav)
+

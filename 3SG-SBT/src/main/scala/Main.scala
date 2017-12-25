@@ -25,6 +25,8 @@ object Main extends App {
       "7) Riproduci melodia\n" +
       "8) Riproduci melodia con BPM a scelta\n" +
       "9) Trasporta melodia\n" +
+      "10) Stampa Spartito\n" +
+      "11) Stampa Spartito entro due battute\n" +
       "0) Esci dall'applicazione")
 
     var options = scala.io.StdIn.readLine().split(' ')
@@ -63,6 +65,33 @@ object Main extends App {
             score.transpose(scala.io.StdIn.readInt())
             println("Transposizione effettuata!")
           }
+          case 10 | 11=> {
+            val R = RClient()
+            var noteList: String = ""
+            var timeList: String = ""
+            var figureList: String = ""
+            var xlimit: String = ""
+            for (note <- score.noteList) {
+              noteList+=note.getNoteName() + note.getOctave().toString() +" "
+              timeList+=note.getNumericNoteValue(note.getNoteValue(myBpm)).toString() + " "
+              figureList+= note.getNoteValue(myBpm) + " "
+            }
+            R.noteList = noteList
+            R.timeList = timeList
+            R.figureList = figureList
+            val tempo = score.getTempo(myBpm)
+            R.tempo = tempo._2 match {
+              case 8 => (tempo._1.toFloat/2f).toString()
+              case _ => tempo._1.toString()
+            }
+            if (option.toInt == 11) {
+              println("Digita battuta iniziale e battuta finale")
+              xlimit = scala.io.StdIn.readLine()
+            }
+            R.xlimit = xlimit
+            val tipographerSource = Source.fromFile("src\\Tipographe.R")
+            R.eval(tipographerSource.mkString)
+          }
           case 0 => {
             println("\nGrazie per aver usato SCALA's SCALE by Scala & Gerloni\nCatania, 6 Dicembre 2017")
             System.exit(0)
@@ -85,7 +114,7 @@ object Main extends App {
           R.eval(playerSource.mkString)
         }
         case e if option.toInt==0 => System.exit(0)
-        case e => println("Comando non valido")
+        //case e => println("Comando non valido")
       }
     }
   }

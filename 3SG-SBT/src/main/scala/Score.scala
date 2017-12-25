@@ -35,17 +35,9 @@ class Score (var sheetPath: String){
 
   //stampa dell'oggetto score
   def print(myBpm: Int): Unit = {
-    val tempo = if (getTempo(myBpm)._2==4) getTempo(myBpm)._1.toFloat else getTempo(myBpm)._1.toFloat/2f
-    var barSaturator = 0f
-    var color = Console.WHITE
     println("###INIZIO###")
-    for (note <- noteList){
-      color = if (barSaturator==0f && tempo!=0) Console.BLACK else Console.WHITE
-      println(color + note.getNoteValue(myBpm) + ": " + note.getNoteName() + note.getOctave())
-
-      barSaturator+=note.getNumericNoteValue(note.getNoteValue(myBpm))
-      barSaturator = if (barSaturator==tempo) 0 else barSaturator
-    }
+    for (note <- noteList)
+      println(note.getNoteValue(myBpm) + ": " + note.getNoteName() + note.getOctave())
     println(Console.WHITE + "###FINE###")
   }
 
